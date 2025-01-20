@@ -92,7 +92,6 @@ const submitdata =async () =>{
    }
   const response = await authAxios.post('/api/register',obj)
                   .catch(err => console.log(err))
-   console.log(response,obj)
    response?.status === 201 ? thankyou() : '';
 }
   // authAxios.post('api/registrations',obj)

@@ -1,7 +1,6 @@
 import { Card, CardBody, Col, Container, Row, Image } from "react-bootstrap"
 
 function CommenView(props:any){
-  console.log(props)
   
     return (
 
