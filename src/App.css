@@ -1,0 +1,289 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-bottom:0rem ;
+  text-align: center;
+}
+.unilogo {
+  height: 109px;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.color-first{
+color:var(--colorOne)
+}
+.color-Second{
+  color:var(--colorSecond)
+}
+.color-third{
+  color:var(--colorThird)
+}
+.color-four{
+  color:var(--colorFour)
+}
+.color-five{
+  color:var(--colorFive)
+}
+  .color-six{
+  color:var(--colorSix)
+} 
+.headingfonttwo{
+  font-size:var(--display-font-size-0);
+}
+.headingfontsize{
+  font-size:var(--display-font-size-1);
+  white-space: nowrap;
+}
+.headingsubheading{
+  font-size:var(--display-font-size-2)
+}
+.font-w600{
+  font-weight: var(--font-w600);
+}
+.font-w300{
+  font-weight: var(--font-w300);
+}
+.font-w400{
+  font-weight: var(--font-w400);
+}
+.font-w500{
+  font-weight: var(--font-w500);
+}
+/*#headtextfirst{  --colorFive:#A7829D;
+} */
+.footerbackground{
+  /* content:''; */
+  width: 100%;
+  position:absolute;
+background-image: url('/src/assets/footerbackground.svg');
+background-size: cover;
+z-index: 1;
+
+    margin: 0px !important;
+    left: 0px;
+    right: 0px;
+    margin-top: 82px !important;
+    width: 100%;
+}
+@media (max-width:768px) {
+  .unilogo{
+    height: 89px;
+   }
+   .eventnewback{
+    height:530px !important;
+   }
+   .headingfonttwo{
+    font-size:var(--display-font-size-2)
+  }
+  .headingfontsize{
+    font-size:var(--display-font-size-3)
+  } 
+  .headingsubheading{
+    font-size:var(--display-font-size-4)
+ 
+  }
+  .aboutdecription{
+    font-size: x-small;
+    margin-bottom: 0px;
+  }
+  .eventbox{
+      top:50px
+  }
+  .font-lastheading{font-size:var(--display-font-size-7);text-align: justify !important;}
+}
+@media (max-width:659px) {
+  .headingfonttwo{
+    font-size:var(--display-font-size-3)
+  }
+  .headingfontsize{
+    font-size:var(--display-font-size-5);
+    white-space: nowrap;
+  } 
+  .headingsubheading{
+    font-size:var(--display-font-size-6);
+    white-space: nowrap;
+  }
+  .aboutdecription{
+    font-size: xx-small;
+        padding: 4px;
+        margin-bottom: 0px;
+  }
+  .eventbox {
+    top: 69px;
+    left: -28px;
+}
+.eventbox > div{
+  width:87%  !important
+}
+  .font-lastheading{font-size:var(--display-font-size-8); text-align: justify !important;}
+}
+@media (max-width:576px) {
+  .headingfonttwo{
+    font-size:var(--display-font-size-5)
+  }
+  .headingfontsize{
+    font-size:var(--display-font-size-7);
+    white-space: nowrap;
+  }
+  .headingsecond{
+    font-size:var(--display-font-size-9) !important;
+    white-space: nowrap;
+  }
+  .headingthird{
+    font-size:var(--display-font-size-11) !important;
+  }
+  .card-heaging{
+    font-size:var(--display-font-size-9) !important;
+  }
+  .card-designation{
+    font-size:var(--display-font-size-10) !important;
+  }
+  .commenright {
+    left: 2rem !important;
+    height: 77% !important;
+    top: 1rem !important
+    ;
+    /* width: min-content; */
+}
+.commenleft {
+  left: 2rem !important;
+  height: 97% !important;
+  width: 69% !important;
+  top: 9px !important;
+}
+.EDU-VAULT .commenleft {
+  left: 2rem !important;
+  height: 97% !important;
+  width: 69% !important;
+  top: 0px !important;
+}
+.eventbox > div{
+  width:75%  !important
+}
+.eventbox {
+  left: 35px;
+}
+
+}
+@media (max-width:509px) {
+  .aboutdecription{
+  /* width:100%  !important */
+  font-size: 0.5rem;
+}
+.eventbox {
+  left: 35px;
+}
+}
+@media (max-width:390px) {
+  
+    .commenleft {
+        left: 1.5rem !important;
+        height: 97% !important;
+        width: 69% !important;
+        top: 3px !important;
+    }
+  .unilogo{
+   height: 59px;
+  }
+  .headingfonttwo{
+    font-size:var(--display-font-size-6)
+  }
+  .headingfontsize {
+    font-size: var(--display-font-size-8);
+    white-space: nowrap;
+}
+.headingsecond {
+  font-size: var(--display-font-size-10) !important;
+}
+.commenright {
+  left: 1rem !important;}
+/* .headingthird {
+  font-size: var(--display-font-size-12) !important;
+  margin-left: 5%;
+} */
+.headingthird {
+  font-size: var(--display-font-size-13) !important;
+}
+.card-heaging {
+  font-size: var(--display-font-size-11) !important;
+  margin-bottom: 0px !important;
+}
+.card-designation {
+  font-size: var(--display-font-size-12) !important;
+}
+.card-img{
+  margin-bottom: 0px !important;
+}
+.aboutdecription {
+  font-size: 0.5rem;;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.eventnewback {
+  width: 342px !important;
+}
+.eventbox > div {
+  width: 93% !important;
+}
+.eventbox {
+  left: 17px;
+}
+}
+@media (max-width:350px) {
+  .eventbox {
+    left: 0px;
+  }
+}
+@media (max-width:329px) {
+.aboutdecription {
+  font-size: 0.34rem;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.headcardtextd{
+  font-size: 0.5rem;
+}
+.headingfonttwo{
+  font-size:var(--display-font-size-7)
+}
+}
+html,body{
+  overflow-x: hidden !important
+  ;
+}

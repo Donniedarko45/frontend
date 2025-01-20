@@ -1,0 +1,193 @@
+.Firstflash::before{content: url('/src/assets/backtwo.svg');position: absolute;left: 0px;z-index: 1;margin-top:15px;}
+.Firstflash::after{content: url('/src/assets/backThird.svg');position: absolute;right: 0px;z-index: 1;top: 151px;}
+.firstemptycontainer::before{content: url('/src/assets/backFour.svg');position: absolute;left: 0px;z-index: 1;top: 394px;;}
+.firstemptycontainer::after{content: url('/src/assets/backfive.svg');position: absolute;right: 0px;z-index: 1;margin-top: -74px;}
+.AboutFlash::before{content: url('/src/assets/backSix.svg');position: absolute;left: 0px;z-index: 1;margin-top:201px;}
+.AboutFlash::after{content: url('/src/assets/backSeven.svg');position: absolute;right:0;z-index: 1;margin-top:-201px;}
+.commenleft{left: 3rem;top:13px;height: 95%;width: 77%;}
+.commenright{left: 5rem;height: 77%;top: 4rem;}
+.Eventback{background: url('/src/assets/Eventback.svg') no-repeat;background-size: contain;position: relative;width: 82%;}
+.EDU-VAULT::before{content: url('/src/assets/backeait.svg') ;position: absolute;left: 0px;z-index: 1;}
+.EDU-VAULT::after{content: url('/src/assets/backtean.svg');position: absolute;right: 0px;z-index: 1; margin-top:-100px}
+.emptyEDU-VAULT::before{content: url('/src/assets/backnine.svg') ;position: absolute;right: 0px;z-index: 1;margin-top: -560px}
+.emptyEDU-VAULT::after{content: url('/src/assets/backeleven.svg');position: absolute;left: 0px;z-index: 1; margin-top:-100px}
+.HUMAN::before{content: url('/src/assets/backtewel.svg') ;position: absolute;left: 0px;z-index: 1;margin-top: 157px;}
+.emptyHUMAN::before{content: url('/src/assets/backforteen.svg') ;position: absolute;left: 0px;z-index: 1; margin-top:-100px}
+.emptyHUMAN::after{content: url('/src/assets/backtheen.svg');position: absolute;right: 0px;z-index: 1; margin-top:-100px}
+.Events::before{content: url('/src/assets/backfiftheen.svg') ;position: absolute;left: 0px;z-index: 1; margin-top:150px}
+.Events::after{content: url('/src/assets/backsixtheen.svg') ;position: absolute;left: 0px;z-index: 1; margin-top:-50px}
+.emptyGUIEDNEST::before{content: url('/src/assets/backseventeen.svg') ;position: absolute;left:42%;z-index: 1; margin-top:-100px }
+.emptyGUIEDNEST::after{content: url('/src/assets/backeaitheen.svg') ;position: absolute;left:80%;z-index: 1;  }
+.NGO::after{content: url('/src/assets/backninetheen.svg') ;position: absolute;right:0%;z-index: 1; margin-top: -130px;}
+.emptyNGO::before{content: url('/src/assets/backtvente.svg') ;position:absolute;left:13%;z-index: 1; margin-top: -30px;}
+.emptyNGO::after{content: url('/src/assets/backtewentone.svg') ;display: none;position:absolute;right: 0px;z-index: 1;margin-top:100px}
+.overall::after{content: url('/src/assets/backtewentetwo.svg') ;position:absolute;left:0%;z-index: 1; margin-top: -121px;}
+.overall::before{content: url('/src/assets/backtewentthree.svg') ;position:absolute;left:0%;z-index: 1; margin-top: 100px;}
+.footerlogo{
+height: 39px !important;
+width: 39px !important;
+}
+@media  (max-width:995px){.Eventback{background: linear-gradient(180deg, rgba(180, 221, 224, 0.4) -3.17%, rgba(246, 239, 211, 0.4) 113.33%);
+    /* background-size: contain; */
+    position: relative;
+    width: 76%;
+    border-radius: 15px; padding-left: 11px !important;padding-right:11px !important;}}
+@media  (max-width:1200px){
+    .eventnewback{
+     width:500px !important
+    }
+    .Eventback{background: linear-gradient(180deg, rgba(180, 221, 224, 0.4) -3.17%, rgba(246, 239, 211, 0.4) 113.33%);
+        /* background-size: contain; */
+        position: relative;
+        width: 100%;
+        border-radius: 15px; padding-left: 11px !important;padding-right:11px !important;}
+        .emptyHUMAN::before,.Events::after,.Events::before, .HUMAN::before,   .emptyEDU-VAULT::after,.Events::before, .Firstflash::before,.firstemptycontainer::before,.AboutFlash::before,.overall::before,.overall::after,.EDU-VAULT::before,.Events::after{
+        transform: scale(.5);
+        left:-33px;
+    }
+    .EDU-VAULT::after,.Firstflash::after,.AboutFlash::after,.firstemptycontainer::after,.emptyNGO::after,.NGO::after,.emptyHUMAN::after,.emptyEDU-VAULT::before{
+        /* transform: scale(.5);   */
+              transform: translateX(35%) scale(.4)
+        /* right:-38px; */
+    }
+    .emptyGUIEDNEST::before,.emptyGUIEDNEST::after{
+        transform: scale(.5);
+        margin-top: -60px;
+    }
+}
+@media  (max-width:659px){
+    .Eventback{background: linear-gradient(180deg, rgba(180, 221, 224, 0.4) -3.17%, rgba(246, 239, 211, 0.4) 113.33%);
+        /* background-size: contain; */
+        position: relative;
+        width: 100%;
+        border-radius: 15px; padding-left: 11px !important;padding-right:11px !important;}
+        .emptyHUMAN::before,.Events::after,.Events::before, .HUMAN::before,   .emptyEDU-VAULT::after,.Events::before, .Firstflash::before,.firstemptycontainer::before,.AboutFlash::before,.overall::before,.overall::after,.EDU-VAULT::before,.Events::after{
+        transform: scale(.5);
+        left:-18px;
+    }
+    .eventnewback{
+        width:410px !important
+       }
+    .EDU-VAULT::after,.Firstflash::after,.AboutFlash::after,.firstemptycontainer::after,.emptyNGO::after,.NGO::after,.emptyHUMAN::after,.emptyEDU-VAULT::before{
+        transform: scale(.5);
+        right:-23px;
+    }
+    .emptyGUIEDNEST::before,.emptyGUIEDNEST::after{
+        transform: scale(.5);
+    }
+}
+@media  (max-width:509px){
+    .footerlogo{
+        width:23px !important;height:23px !important;
+       font-size: 16px !important;
+        }
+        .emptyHUMAN::before{
+            margin-top: -227px;
+        }
+    .Eventback{background: linear-gradient(180deg, rgba(180, 221, 224, 0.4) -3.17%, rgba(246, 239, 211, 0.4) 113.33%);
+        /* background-size: contain; */
+        position: relative;
+        width: 100%;
+        border-radius: 15px; padding-left: 11px !important;padding-right:11px !important;}
+        .firstemptycontainer::before{
+            top: 375px;
+        }
+        .emptyHUMAN::before, .Events::after,.Events::before, .HUMAN::before,   .emptyEDU-VAULT::after,.Events::before, .Firstflash::before,.firstemptycontainer::before,.AboutFlash::before,.overall::before,.overall::after,.EDU-VAULT::before,.Events::after{
+            left: 0px;
+            transform: translateX(-31%) scale(.4);
+    }
+    .AboutFlash::after{
+        /* margin-top: 5px; */
+    }
+    .emptyEDU-VAULT::before{
+        margin-top: -305px;
+    }
+    .EDU-VAULT::after,.Firstflash::after,.AboutFlash::after,.firstemptycontainer::after,.emptyNGO::after,.NGO::after,.emptyHUMAN::after,.emptyEDU-VAULT::before{
+        /* transform: scale(.4);     */
+            transform: translateX(31%) scale(.4);
+        right:0px;
+    }
+    .emptyGUIEDNEST::before,.emptyGUIEDNEST::after{
+        transform: scale(.4);
+    }
+    .eventnewback{
+        width:378px !important
+       }
+       
+}
+@media only screen and (min-width:360px){
+    .eventnewback{
+        width:320px !important;
+        margin-left: -17px !important;
+        height:422px !important
+       }  
+
+}
+@media only screen and (min-width: 375px) {
+    .eventnewback{
+        width:335px !important;
+        margin-left: -17px;
+        height: 422px !important;
+       }  
+}
+@media only screen and (min-width: 380px){
+    .eventnewback{
+        width:355px !important;
+        margin-left: -17px;
+        height: 422px !important;
+       }     
+}
+@media  (max-width:350px){
+    .eventnewback{
+        width:320px !important;
+        margin-left: -17px;
+        height: 422px !important;
+       }  
+}
+@media  (max-width:330px){
+    .eventnewback{
+        width:278px !important;
+        height: 379px !important;
+        margin-left: -17px;
+       }
+}
+
+@media only screen and (min-width: 578px){
+    .eventnewback{
+        width:100% !important;
+        margin-left: 0px
+       }  
+       .eventbox {
+        /* left: 0px; */
+        top:92px
+      } 
+}
+@media only screen and (min-width: 768px){
+    .eventnewback{
+        width:100% !important;
+        margin-left: -15px
+       }  
+       .eventbox {
+        /* left: 0px; */
+        top:9px
+      }  
+}
+@media only screen and (min-width: 840px) {
+    .commenright {
+    left: 2rem;
+    height: 77%;
+    top: 3rem;
+    }
+}
+@media only screen and (min-width: 1280px){
+    .eventnewback{
+        width:100% !important;
+        margin-left: -15px;
+        height: 600px !important;
+       }   
+       .commenright{left: 5rem;height: 77%;top: 4rem;}
+    
+}
+body{
+    background-color: white !important;
+}
