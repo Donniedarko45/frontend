@@ -5,6 +5,7 @@ import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { authAxios } from "../../../access/access";
 import { problemdata } from "../../../data/Register/Register";
+import { Bounce, ToastContainer , toast} from "react-toastify";
 type MyComponentProps = {
     handlerfun: () => void;  // Define handler as a function that returns void
     
@@ -18,6 +19,17 @@ const PreRegister:React.FC<MyComponentProps>=({handlerfun})=>{
     function thankyou(){
         setthankpage(true)
     }
+    const notify = () => toast.warn('This email ID is already in use', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+      });
     const [validated, setValidated] = useState(false);
     const [validatedtwo, setValidatedtwo] = useState(false);
     const [formData, setFormData] = useState({
@@ -90,8 +102,10 @@ const submitdata =async () =>{
     problem_2:formDatatwo.Numbertwo,
     problem_3:formDatatwo.Numberthree
    }
-  const response = await authAxios.post('/api/register',obj)
-                  .catch(err => console.log(err))
+
+  const response:any = await authAxios.post('/api/register',obj)
+   .catch(err =>(err.response.data.message === 'Email already registered' ? notify():'') )
+   console.log(response,obj);
    response?.status === 201 ? thankyou() : '';
 }
   // authAxios.post('api/registrations',obj)
@@ -99,9 +113,11 @@ const submitdata =async () =>{
  return (
     <React.Fragment>
         <nav className='d-flex justify-content-between  container-fluid align-items-center place-content-center' style={{placeContent:'center'}}>
-        <div onClick={handlerfun} >
+       {!modal ? <div onClick={handlerfun} >
         <IoIosArrowDropleftCircle className='fs-1' />
-            </div>
+        </div> :<div onClick={()=>setmodal(false)} >
+        <IoIosArrowDropleftCircle className='fs-1' />
+        </div>}
             <div  >
                 <img src={unilogo} alt='unilogo' className='unilogo'></img>
             </div>
@@ -263,6 +279,7 @@ const submitdata =async () =>{
 
             
         </Container>
+        <ToastContainer />
     </React.Fragment>
  )
 }
