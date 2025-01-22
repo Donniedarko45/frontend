@@ -7,7 +7,7 @@ function OverAll(){
                 <Card className="border-0">
                     <CardBody className="p-0">
             <h1 className={`headingfontsize text-center text-dark fw-bolder  mb-3`}>
-            Our Goal
+            Our-Goal
             </h1>
             <Row>
               <p className="text-start fs-5 fs-xs-6 fw-normal headingthird">Uniisphere’s mission is to empower university students by fostering meaningful connections, enhancing academic collaboration, and providing resources for personal and professional growth ensuring opportunities for all, regardless of where they graduated from.              </p>

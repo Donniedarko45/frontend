@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import unilogo from '../../../assets/uniisphearlogo.png'
-import { Container,Card,CardBody,Form ,Button} from "react-bootstrap"
+import { Container,Card,CardBody,Form ,Button, Spinner} from "react-bootstrap"
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { authAxios } from "../../../access/access";
@@ -13,6 +13,7 @@ type MyComponentProps = {
 const PreRegister:React.FC<MyComponentProps>=({handlerfun})=>{
     const [modal,setmodal] = useState(false)
     const [thankpage,setthankpage] = useState(false)
+    const [loader, setloader] =useState(false)
     function otherdetails(){
         setmodal(true)
     }
@@ -82,6 +83,7 @@ const PreRegister:React.FC<MyComponentProps>=({handlerfun})=>{
       event.stopPropagation();
     }
       if(formDatatwo.collage !=='' &&  formDatatwo.Degree !=='' && formDatatwo.Numberthree!=='' && formDatatwo.Numbertwo!=='' && formDatatwo.NumberOne !==''){
+        setloader(true)
         submitdata()
        
       }
@@ -104,9 +106,9 @@ const submitdata =async () =>{
    }
 
   const response:any = await authAxios.post('/api/register',obj)
-   .catch(err =>(err.response.data.message === 'Email already registered' ? notify():'') )
+   .catch(err =>(err.response.data.message === 'Email already registered' ?(setloader(false), notify()):'') )
    console.log(response,obj);
-   response?.status === 201 ? thankyou() : '';
+   response?.status === 201 ?(setloader(false), thankyou()) : '';
 }
   // authAxios.post('api/registrations',obj)
   // .catch(err => console.log(err))
@@ -249,8 +251,10 @@ const submitdata =async () =>{
           </Form.Control.Feedback>
       </Form.Group>
       <div className="text-center w-100">
-      <Button variant="primary"  className="rounded-4 text-center m-auto" onClick={handleSubmittwo} type="button">
-      Continue
+      <Button variant="primary" disabled={loader}  className="rounded-4 text-center m-auto" onClick={handleSubmittwo} type="button">
+      Submit {loader && <Spinner animation="border" size="sm" role="status">
+  
+</Spinner>}
       </Button>
       </div></Form>
       </React.Fragment>     }
@@ -261,7 +265,7 @@ const submitdata =async () =>{
             <Card className='border-0 rounded-5 mt-3 col-lg-9 m-auto' style={{background: 'linear-gradient(180deg, rgba(68, 169, 177, 0.1) 0%, rgba(225, 200, 107, 0.1) 100%)'}}>
                 <CardBody className="d-flex flex-column justify-content-center">
                 <h1 className="headingfontsize fw-bolder   fs-sm-1">
-                <span className="color-first">T</span><span className="color-Second">H</span><span className="color-third">A</span><span className="color-third">N</span ><span className="color-four">K</span><span className="color-five"> </span><span className="color-six">Y</span><span className="color-five">O</span><span  className="color-Second">U</span><span className="color-first">E</span></h1>
+                <span className="color-first">T</span><span className="color-Second">H</span><span className="color-third">A</span><span className="color-third">N</span ><span className="color-four">K</span><span className="color-five"> </span><span className="color-six">Y</span><span className="color-five">O</span><span  className="color-Second">U</span><span className="color-first"></span></h1>
                 <h3 className=" fw-bolder fs-4 headingthird text-dark mb-3">Pre-Registration Successfully Completed</h3>
                  <p className="text-center fs-6 fw-normal headingthird">You will receive bonus points as you have  successfully completed the 
                  Pre-Resgistration at Uniisphere.  </p>   </CardBody>   </Card>
