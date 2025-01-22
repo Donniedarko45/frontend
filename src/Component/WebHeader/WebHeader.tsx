@@ -8,7 +8,7 @@ const WebHeader: React.FC<MyComponentProps>=({handlerfun,Register})=>{
     return (
         <nav className='d-flex justify-content-between  container-fluid align-items-center place-content-center' style={{placeContent:'center'}}>
             <div>
-                <img src={unilogo} alt='unilogo' className='unilogo'></img>
+                <img src={unilogo} alt='uniisphere' className='unilogo'></img>
             </div>
             <div className='align-content-center align-items-center h-100'>
               {!Register ? <Button variant="dark" className='fw-normal headingthird  fs-5 pt-1 pb-1 ps-2 pe-2' onClick={handlerfun} style={{fontFamily:'Inter'}} >Pre-Register</Button> : ''}  

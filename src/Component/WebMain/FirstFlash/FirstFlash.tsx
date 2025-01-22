@@ -57,7 +57,7 @@ const FirstFlash:React.FC<MyComponentProps>=({handlerfun})=>{
          <Card className="border-0 mb-5 ps-0 pe-0"><CardBody className="ps-0 pe-0">
            <h1 className="headingfonttwo  fw-bolder mb-0 mt-5 fs-sm-1">
             <span className="color-first">U</span><span className="color-Second">N</span><span className="color-third">I</span><span className="color-third">I</span ><span className="color-four">S</span><span className="color-five">P</span><span className="color-six">H</span><span className="color-five">E</span><span  className="color-Second">R</span><span className="color-first">E</span></h1>
-            <h3 className=" fw-normal fs-5 headingthird text-dark  mb-4" >“Connect”  “Collaborate”  “Success”</h3>
+            <h3 className=" fw-normal fs-5 headingthird text-dark  mb-4" >“Connect”  “Collaborate”  “Succeed”</h3>
             <Button variant="outline-dark" onClick={handlerfun} className="fs-3 headingsecond fw-bolder bg-white mb-4" >
                {Prebutton.map((data:any,i)=>{
                 return (

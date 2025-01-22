@@ -125,6 +125,19 @@ z-index: 1;
   .eventbox{
       top:50px
   }
+  .commenright {
+    left: 2rem !important;
+    height: 77% !important;
+    top: 1rem !important
+    ;
+    /* width: min-content; */
+}
+.commenleft {
+  left: 2rem !important;
+  height: 97% !important;
+  width: 69% !important;
+  top: 9px !important;
+}
   .font-lastheading{font-size:var(--display-font-size-7);text-align: justify !important;}
 }
 @media (max-width:659px) {
