@@ -29,7 +29,7 @@ export const Aboutcarddetails=[
         colorSecond:'rgba(91, 82, 82, 0.5)'
     },
     {
-        name:'“khushbu”',
+        name:'“khushboo”',
         img:'img/thirdpic.png',
         backimg:'img/Rectfour.svg',
         designation:'MBA',
