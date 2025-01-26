@@ -3,6 +3,7 @@ import { Row,Col } from 'react-bootstrap'
 import { FaLinkedin,FaInstagram } from "react-icons/fa";
 import unilogo from '../../../assets/uniisphearlogo.png'
 function Footer(){
+    
 return (
     <React.Fragment>
         

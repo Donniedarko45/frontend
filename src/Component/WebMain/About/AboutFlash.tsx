@@ -1,23 +1,32 @@
 import {Card, CardBody, Container, Col,Row } from "react-bootstrap"
 import { Aboutdecription,Aboutcarddetails } from "../../../data/About/About"
-// type Aboutcarddetails:{
-//     name:st
-// }
-// import img from '../../../assets/firstpic.svg'
-function AboutFlash(){
-    
+import {  useEffect, useState } from "react";
+
+function AboutFlash({ scrollPosition }: { scrollPosition: any }){
+  const [visible,setvisible] = useState(false)
+  
+  useEffect(()=>{
+    if(window.innerHeight < 480){
+      scrollPosition > 600 ? setvisible(true) : '';
+    }
+    else{  
+      scrollPosition > 240 ? setvisible(true) : '';
+    }
+  },[scrollPosition])
+
+
     return (
-      <Container style={{fontFamily:'Inter'}} className="AboutFlash" key={1}>
-        <Card className="border-0 ps-0 pt-sm-5 pt-0 pe-0">
+      <Container style={{fontFamily:'Inter'}}  className="AboutFlash" key={1}>
+        <Card className="border-0 ps-0 pt-sm-3 pt-0 pe-0"   >
             <CardBody className="p-0">
-               <Row>
-                 <p className="fs-5 font-w600 mb-4">About Us ?</p>
+               <Row  >
+                 <p className="fs-4 font-w600 mb-4">About Us ?</p>
                </Row>
-               <Row>
+               <Row >
                 <p className="text-start fs-6 fw-normal headingthird">{Aboutdecription}</p>
                </Row>
                <Row><p className="fs-4 mb-0 card-heaging font-w600 text-start">People:</p></Row>
-               <Row className=" mt-4">
+               <Row className={`${visible && 'profilecards mt-4' }`} style={visible ?{visibility:'visible'} : {visibility:'hidden'}}>
         {Aboutcarddetails.map(( data: {backimg:string,name: string;img: string;designation: string;description: string,colorFirst:string,colorSecond:string},i)=>{
                     return(
                         <Col xs={6} key={i}  md={6}sm={6} lg={3} className="col-sm-6  mb-4" style={{height:'inherit'}}>
