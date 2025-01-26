@@ -4,7 +4,7 @@ export const Aboutcarddetails=[
         img:'img/firstpic.png',
         backimg:'img/Rectfour.svg',
         designation:'Business management',
-        description:'Student at Maters Union  |  Building a Startup  |  Want to be a successful Entrepreneur  |  Have been a sports person.'
+        description:'Student at Masters Union  |  Building a Startup  |  Want to be a successful Entrepreneur  |  Have been a sports person.'
         , colorFirst:' rgba(68, 169, 177, 0.16)',
         colorSecond:'rgba(3, 3, 3, 0.5)'
     },

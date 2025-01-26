@@ -11,7 +11,7 @@ const WebHeader: React.FC<MyComponentProps>=({handlerfun,Register})=>{
                 <img src={unilogo} alt='uniisphere' className='unilogo'></img>
             </div>
             <div className='align-content-center align-items-center h-100'>
-              {!Register ? <Button variant="dark" className='fw-normal headingthird  fs-5 pt-1 pb-1 ps-2 pe-2' onClick={handlerfun} style={{fontFamily:'Inter'}} >Pre-Register</Button> : ''}  
+              {!Register ? <Button variant="dark" className='fw-normal headingthird  fs-5 pt-1 pb-1 ps-2 pe-2 Preregister' onClick={handlerfun} style={{fontFamily:'Inter'}} >Pre-Register</Button> : ''}  
             </div>
         </nav>
     )

@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect ,useState} from "react";
+import { detectDevice } from "../../../data/Edu/Eduwalut";
 import { Card, CardBody, Col, Container, Row,Image } from "react-bootstrap";
 import { Event } from "../../../data/Event/Events";
 import img from '../../../assets/eventback2.png'
-export default function EventView(){
+
+export default function EventView({ scrollPosition }: { scrollPosition: any }){
+    const [visible,setvisible] = useState(false)
+              const animationStyle = {
+                opacity: 1,
+                transition: 'opacity 1s ease-out',
+              };
+              
+              useEffect(()=>{
+                // assest()
+                scrollPosition > detectDevice()[2] ? setvisible(true) : '';
+                // alert(scrollPosition)
+              },[scrollPosition,visible]) 
     return (
         <React.Fragment>
-          <Container className="Events">
+          <Container className="Events" style={visible? animationStyle:{visibility:'hidden'} }>
           <Row>
                     <h1 className={` text-start text-secondary  mb-3 fw-bolder  headingfontsize` }>
                     EVENTS
@@ -16,12 +29,12 @@ export default function EventView(){
                     <div className="h-100 w-100">
                         <img src={img} className="w-100  eventnewback" style={{height:'600px'}} /> 
                     </div>
-                    <div className="position-absolute eventbox w-100 pt-sm-5 ps-sm-5 ms-sm-4 ">
+                    <div className={`position-absolute ${visible && 'eventbox'} w-100 pt-sm-5 ps-sm-5 ms-sm-4 `}>
 
                     
                     {Event.map((data) =>{
                         return (
-                            <Row key={data.id} className={`${data.leftside ? '':'flex-row-reverse' } w-75 w-sm-75 ms-1 mb-3 h-100 `}>
+                            <Row key={data.id} className={`${data.leftside ? '':'flex-row-reverse' } w-75 w-sm-75 ms-1 mb-3 h-100 eventrows`}>
                             <Col className="col-auto  col-md-2 col-sm-3 col-4 h-100 m-auto"  >
                             <Image src={data.imgs} className="h-100 w-100 m-auto" rounded  />
                             </Col>

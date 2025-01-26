@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
@@ -20,14 +20,26 @@ function App() {
   // function home(){
   //   setRegister(true)
   // }
+  const [scrollPosition, setScrollPosition] = useState(0);
+  function scrollnew(){
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', scrollnew);
+    return () => {
+      window.removeEventListener('scroll', scrollnew);
+    };
+  }, []);
   return (
     <React.Fragment>
-         {!Register ? <div><WebHeader handlerfun={handler} Register={Register}/>
+      <button className='position-fixed z-3'>{scrollPosition}</button>
+         {!Register ? <div onScroll={()=>scrollnew}><WebHeader handlerfun={handler} Register={Register}/>
        <FirstFlash handlerfun={handler}/>
        <div className='firstemptycontainer container'></div>
-       <AboutFlash />
-       <Eduwal />
-       <OverAll/><Footer /></div> :<React.Fragment> <PreRegister handlerfun={handler} /> 
+       <AboutFlash scrollPosition={scrollPosition} />
+       <Eduwal scrollPosition={scrollPosition} />
+       <OverAll scrollPosition={scrollPosition} /><Footer  /></div> :<React.Fragment> <PreRegister handlerfun={handler} /> 
        <div className='firstemptycontainer container'></div>
        </React.Fragment> }    
        {/* </div> */}

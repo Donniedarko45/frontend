@@ -47,14 +47,22 @@ width: 39px !important;
         /* transform: translateX(35%) scale(.4) */
     }
     .EDU-VAULT::after,.Firstflash::after,.AboutFlash::after,.firstemptycontainer::after,.emptyNGO::after,.NGO::after,.emptyHUMAN::after,.emptyEDU-VAULT::before{
-        /* transform: scale(.5);   */
               transform: translateX(35%) scale(.4)
-        /* right:-38px; */
     }
     .emptyGUIEDNEST::before,.emptyGUIEDNEST::after{
         transform: scale(.5);
         margin-top: -60px;
     }
+}
+@media  (min-width:1200px){
+    .emptyHUMAN::before,.Events::after,.Events::before, .HUMAN::before,   .emptyEDU-VAULT::after,.Events::before, .Firstflash::before,.firstemptycontainer::before,.AboutFlash::before,.overall::before,.overall::after,.EDU-VAULT::before,.Events::after{
+        transform: scale(.4);
+        left:-33px;
+        /* transform: translateX(35%) scale(.4) */
+    }
+    .EDU-VAULT::after,.Firstflash::after,.AboutFlash::after,.firstemptycontainer::after,.emptyNGO::after,.NGO::after,.emptyHUMAN::after,.emptyEDU-VAULT::before{
+        transform: translateX(35%) scale(.4)
+}
 }
 @media  (max-width:659px){
     .Eventback{background: linear-gradient(180deg, rgba(180, 221, 224, 0.4) -3.17%, rgba(246, 239, 211, 0.4) 113.33%);

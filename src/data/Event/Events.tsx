@@ -1,3 +1,6 @@
+
+
+
 export const Event: {
     id: number;
     datem: string;
@@ -38,3 +41,4 @@ export const Event: {
     leftside:false
 },
 ]
+
