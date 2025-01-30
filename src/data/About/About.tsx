@@ -20,12 +20,12 @@ export const Aboutcarddetails=[
     // background: linear-gradient(180deg, #D93E39 0%, #E0E0E0 100%);
 
     {
-        name:'“Shubham”',
+        name:'“Abhishek”',
         img:'img/fourpic.png',
         backimg:'img/RectThree.svg',
-        designation:'Nautical Science',
-        description:'Student a T.S Rahaman  |  Works at Mol  |  Working as Cadet in Merchant Navy  |  Want to be a successful Navy Captian. '
-        , colorFirst:'rgba(221, 192, 88, 0.5)',
+        designation:'B.tech',
+        description:'student at GNOIT/Work at uniisphere | want to be a data analyst | Like to travel',
+        colorFirst:'rgba(221, 192, 88, 0.5)',
         colorSecond:'rgba(91, 82, 82, 0.5)'
     },
     {
