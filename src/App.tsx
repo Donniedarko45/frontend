@@ -33,7 +33,7 @@ function App() {
   }, []);
   return (
     <React.Fragment>
-      <button className='position-fixed z-3'>{scrollPosition}</button>
+      {/* <button className='position-fixed z-3'>{scrollPosition}</button> */}
          {!Register ? <div onScroll={()=>scrollnew}><WebHeader handlerfun={handler} Register={Register}/>
        <FirstFlash handlerfun={handler}/>
        <div className='firstemptycontainer container'></div>
