@@ -33,8 +33,8 @@ export const Aboutcarddetails=[
         img:'img/thirdpic.png',
         backimg:'img/Rectfour.svg',
         designation:'MBA',
-        description:'Student at UPES  |  Works as Marketing Manager  |  Want ot be a successful Marketing Expert  |  Likes to teravel a lot.'
-      , colorFirst:'rgba(19, 145, 255, 0.5)',
+        description:'Student at UPES | Works as a Marketing Manager | Wants to be a successful Marketing Expert | Likes to travel a lot.',
+        colorFirst:'rgba(19, 145, 255, 0.5)',
         colorSecond:'rgba(3, 3, 3, 0.5)'
     }
 ]

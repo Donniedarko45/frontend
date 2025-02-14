@@ -200,6 +200,9 @@ width: 39px !important;
       }  
 }
 @media only screen and (max-width: 840px) {
+    .abutdescripttextk{
+        text-align: center !important;
+    }
     .commenright {
     left: 2rem;
     height: 77%;

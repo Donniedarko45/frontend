@@ -1,9 +1,9 @@
-let Huglaptop=[900,1500,2400,3000,3700,4190] 
-let moblie=[600,800,1150,1600,1770,2000] 
-let smallmoblie=[840,1180,1600,1770,2000,2200] 
-let moblieorientations=[1300,1900,2660,3200,3750,4300] 
-let Tablet=[900,1300,1900,2400,3000,3500]
-let Hlaptop=[900,1500,2000,2760,3250,3830]
+let Huglaptop=[1750,2300,3000,3770,4500,4900] 
+let moblie=[1040,1300,1950,2200,2430,2730] 
+let smallmoblie=[1140,1580,2100,2570,2800,3000] 
+let moblieorientations=[2240,2700,3300,4000,4500,5000] 
+let Tablet=[1900,2300,2800,3300,3800,4280]
+let Hlaptop=[1800,2300,2900,3760,4250,4830]
 
 export function detectDevice() {
     const width = window.innerWidth;
