@@ -12,6 +12,7 @@ const VideoPlayer = ({ src, type = "video/mp4" }: VideoPlayerProps) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const playerRef = useRef<Player | null>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     setIsMounted(true);
@@ -74,6 +75,14 @@ const VideoPlayer = ({ src, type = "video/mp4" }: VideoPlayerProps) => {
     };
   }, [isMounted, src, type]);
 
+  const toggleMute = () => {
+    if (playerRef.current) {
+      const newMuteState = !isMuted;
+      playerRef.current.muted(newMuteState);
+      setIsMuted(newMuteState);
+    }
+  };
+
   if (!isMounted) return null;
 
   return (
@@ -81,17 +90,15 @@ const VideoPlayer = ({ src, type = "video/mp4" }: VideoPlayerProps) => {
       <div 
         data-vjs-player 
         style={{ 
-          top: 0,
-          left: 0,
+          position: 'relative',
           width: '100%',
           maxHeight: '610px'
         }}
       >
         <video
           ref={videoRef}
-          className="video-js vjs-big-play-centered vjs-fluid"
+          className="video-js vjs-fluid"
           playsInline
-          muted
           style={{ width: '100%', height: '100%' }}
         >
           <source src={src} type={type} />
@@ -99,6 +106,27 @@ const VideoPlayer = ({ src, type = "video/mp4" }: VideoPlayerProps) => {
             To view this video please enable JavaScript, or consider upgrading to a web browser that supports HTML5 video
           </p>
         </video>
+        <button
+          onClick={toggleMute}
+          style={{
+            position: 'absolute',
+            bottom: '20px',
+            right: '20px',
+            zIndex: 2,
+            background: 'rgba(0,0,0,0.7)',
+            border: 'none',
+            borderRadius: '50%',
+            width: '40px',
+            height: '40px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            color: 'white',
+          }}
+        >
+          {isMuted ? '🔇' : '🔊'}
+        </button>
       </div>
     </div>
   );
