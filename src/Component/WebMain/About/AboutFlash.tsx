@@ -39,11 +39,12 @@ function AboutFlash({ scrollPosition }: { scrollPosition: any }){
   <Row style={{ cursor: "pointer" ,width:'100%'}} className="m-auto" >
     <video className="rounded-2"
       style={{maxHeight:'610px',height:'auto',width:'100%'}}
+      preload="auto"
       autoPlay
       loop
       playsInline // Ensure autoplay works on mobile browsers
+      src="https://res.cloudinary.com/die8tcfj1/video/upload/v1739468129/WhatsApp_Video_2025-02-13_at_23.04.08_729638de_qlvkne.mp4" type="application/x-mpegURL" 
     >
-      <source src="https://res.cloudinary.com/die8tcfj1/video/upload/v1739468129/WhatsApp_Video_2025-02-13_at_23.04.08_729638de_qlvkne.mp4" type="video/mp4" />
     </video>
   </Row>
 )}
