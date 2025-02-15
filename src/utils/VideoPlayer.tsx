@@ -35,22 +35,32 @@ const VideoPlayer = ({ src, type = "video/mp4" }: VideoPlayerProps) => {
         fluid: true,
         responsive: true,
         preload: "auto",
-        sources: [{
-          src: src,
-          type: type
-        }],
+        sources: [
+          {
+            src: src,
+            type: type,
+          },
+        ],
         bigPlayButton: false,
       });
 
-      player.addClass('vjs-no-control-bar');
+      player.addClass("vjs-no-control-bar");
+
+      player.on("loadedmetadata", function () {
+        console.log("Video metadata loaded");
+        player.play();
+        
+        // Add click handler to unmute
+        const wrapper = document.querySelector('[data-vjs-player]');
+        if (wrapper) {
+          wrapper.addEventListener('click', () => {
+            player.muted(false);  // Unmute on click
+          }, { once: true });
+        }
+      });
 
       player.on('error', function() {
         console.error('Video Player Error:', player.error());
-      });
-
-      player.on('loadedmetadata', function() {
-        console.log('Video metadata loaded');
-        player.play();
       });
 
       playerRef.current = player;
@@ -79,12 +89,15 @@ const VideoPlayer = ({ src, type = "video/mp4" }: VideoPlayerProps) => {
       >
         <video
           ref={videoRef}
-          className="video-js vjs-fluid"
+          className="video-js vjs-big-play-centered vjs-fluid"
           playsInline
           muted
           style={{ width: '100%', height: '100%' }}
         >
           <source src={src} type={type} />
+          <p className="vjs-no-js">
+            To view this video please enable JavaScript, or consider upgrading to a web browser that supports HTML5 video
+          </p>
         </video>
       </div>
     </div>
