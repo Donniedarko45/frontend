@@ -21,7 +21,7 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
+.video-react-control-bar.video-react-control-bar-auto-hide{opacity: 0 !important;}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

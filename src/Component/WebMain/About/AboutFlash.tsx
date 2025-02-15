@@ -1,10 +1,20 @@
 import {Card, CardBody, Container, Col,Row } from "react-bootstrap"
 import { Aboutdecription,Aboutcarddetails } from "../../../data/About/About"
-import {  useEffect, useState } from "react";
+import {  useEffect,useState } from "react";
+// interface VideoPlayerProps {
+//   src: string;
+//   width?: number;
+//   height?: number;
+//   controls?: boolean;
+//   loop?: boolean;
+//   autoPlay?: boolean;
+//   muted?: boolean;
+//   playsInline?: boolean;
+// }
 
 function AboutFlash({ scrollPosition }: { scrollPosition: any }){
   const [visible,setvisible] = useState(false)
-  
+  // type Player = any;
   useEffect(()=>{
     if(window.innerHeight < 480){
       scrollPosition > 600 ? setvisible(true) : '';
@@ -23,9 +33,21 @@ function AboutFlash({ scrollPosition }: { scrollPosition: any }){
                  <p className="fs-4 font-w600 mb-4">About Us ?</p>
                </Row>
                <Row >
-                <p className="text-start fs-6 fw-normal headingthird">{Aboutdecription}</p>
+                <p className="text-start fs-6 fw-normal headingthird abutdescripttextk">{Aboutdecription}</p>
                </Row>
-               <Row><p className="fs-4 mb-0 card-heaging font-w600 text-start">People:</p></Row>
+          {visible && (
+  <Row style={{ cursor: "pointer" ,width:'100%'}} className="m-auto" >
+    <video className="rounded-2"
+      style={{maxHeight:'610px',height:'auto',width:'100%'}}
+      autoPlay
+      loop
+      playsInline // Ensure autoplay works on mobile browsers
+    >
+      <source src="https://res.cloudinary.com/die8tcfj1/video/upload/v1739468129/WhatsApp_Video_2025-02-13_at_23.04.08_729638de_qlvkne.mp4" type="video/mp4" />
+    </video>
+  </Row>
+)}
+               <Row className="mt-4"><p className="fs-4 mb-0 card-heaging font-w600 text-start">People:</p></Row>
                <Row className={`${visible && 'profilecards mt-4' }`} style={visible ?{visibility:'visible'} : {visibility:'hidden'}}>
         {Aboutcarddetails.map(( data: {backimg:string,name: string;img: string;designation: string;description: string,colorFirst:string,colorSecond:string},i)=>{
                     return(
