@@ -28,8 +28,9 @@ const VideoPlayer = ({ src, type = "video/mp4" }: VideoPlayerProps) => {
 
     if (videoRef.current) {
       const player = videojs(videoRef.current, {
-        controls: true,
+        controls: false,
         autoplay: true,
+        loop: true,
         fluid: true,
         responsive: true,
         preload: "auto",
