@@ -1,20 +1,11 @@
 import {Card, CardBody, Container, Col,Row } from "react-bootstrap"
 import { Aboutdecription,Aboutcarddetails } from "../../../data/About/About"
-import {  useEffect,useState } from "react";
-// interface VideoPlayerProps {
-//   src: string;
-//   width?: number;
-//   height?: number;
-//   controls?: boolean;
-//   loop?: boolean;
-//   autoPlay?: boolean;
-//   muted?: boolean;
-//   playsInline?: boolean;
-// }
-
+import {  useEffect,useRef,useState } from "react";
+import { FaVolumeMute,FaVolumeUp } from "react-icons/fa";
 function AboutFlash({ scrollPosition }: { scrollPosition: any }){
   const [visible,setvisible] = useState(false)
-  // type Player = any;
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isMuted, setIsMuted] = useState(false);
   useEffect(()=>{
     if(window.innerHeight < 480){
       scrollPosition > 600 ? setvisible(true) : '';
@@ -24,7 +15,12 @@ function AboutFlash({ scrollPosition }: { scrollPosition: any }){
     }
   },[scrollPosition])
 
-
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
     return (
       <Container style={{fontFamily:'Inter'}}  className="AboutFlash" key={1}>
         <Card className="border-0 ps-0 pt-sm-3 pt-0 pe-0"   >
@@ -36,15 +32,11 @@ function AboutFlash({ scrollPosition }: { scrollPosition: any }){
                 <p className="text-start fs-6 fw-normal headingthird abutdescripttextk">{Aboutdecription}</p>
                </Row>
           {visible && (
-  <Row style={{ cursor: "pointer" ,width:'100%'}} className="m-auto" >
-    <video className="rounded-2"
-      style={{maxHeight:'610px',height:'auto',width:'100%'}}
-      autoPlay
-      loop
-      playsInline // Ensure autoplay works on mobile browsers
-    >
+  <Row style={{ cursor: "pointer" ,width:'100%'}} className="m-auto position-relative" >
+    <video className="rounded-2 m-auto" ref={videoRef}style={{maxHeight:'610px',height:'auto',width:'100%'}} autoPlay loop playsInline controls={false}>
       <source src="https://res.cloudinary.com/die8tcfj1/video/upload/v1739468129/WhatsApp_Video_2025-02-13_at_23.04.08_729638de_qlvkne.mp4" type="video/mp4" />
     </video>
+        <span onClick={toggleMute} className="text-dark bottom-0 start-50 rounded-circle p-1 ps-2 pe-2 mb-1 border border-dark position-absolute w-auto bg-white me-1">{isMuted ? <FaVolumeMute    /> : <FaVolumeUp  /> }</span>
   </Row>
 )}
                <Row className="mt-4"><p className="fs-4 mb-0 card-heaging font-w600 text-start">People:</p></Row>
